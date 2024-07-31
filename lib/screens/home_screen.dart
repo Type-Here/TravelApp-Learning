@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../widget/destination_carousel.dart';
+
 class HomeScreen extends StatefulWidget{
   const HomeScreen({super.key});
 
@@ -24,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen>{
         setState(() {
           _selectedIndex = index;
         });
-        print(_selectedIndex);
       },
       child:  Container(
           height: 60.0,
@@ -56,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen>{
       body: SafeArea(child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           children: <Widget>[
+
             const Padding(
               padding: EdgeInsets.only(left:20.0, right: 120.0),
               child: Text('What would you like to Find?',
@@ -65,11 +67,16 @@ class _HomeScreenState extends State<HomeScreen>{
                 ),
               ),
             ),
+
             const SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: firstRowIcons,
             ),
+
+            const SizedBox(height: 20.0,),
+            const DestinationCarousel(),
+
           ],
         )
       ),
